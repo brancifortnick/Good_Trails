@@ -1,0 +1,47 @@
+extends layout.pug
+//- we have trail, user, review objects
+
+block content
+  div.grid-container
+    div.trail-banner
+      div.trail-img
+        img(src=`/images/trail${trail.id}.jpg`).trail-image
+      div.trail-toggles
+        button.visited Visited
+        button.interested Interested
+    div.trail-content
+
+      div.trail-info
+        h1(id=`${trail.id}`)= trail.name
+        a(href=`/states/${state.state_code}`)
+          h2.trail-state= state.state_name
+        div.trail-dif-dis-container
+          div.trail-distance
+            h3 Distance: #{trail.length}miles
+          div.trail-difficulty
+            h2 This trail has a difficulty of: #{trail.difficulty}
+        p.trail-description= trail.description
+      div.review-open-div
+          button.review-open-button.review-button Write Review
+
+      //- Write a review
+      div.review-form-container
+        //- form
+        form.review-form(action=`/reviews/${trail.id}`, method='post')
+          textarea.review-text-area(name="reviewText" rows='10' cols='42')
+          input(type="hidden", name="_csrf", value=csrfToken)
+
+          div.submit-button-container
+            button.submit-review.review-button(type="submit") Submit
+            button.cancel-review.review-button Cancel
+
+      //- Display reviews dynamically
+      div.review-display-container
+        //- reviews append to this div in js
+
+append head
+  //- add page specific styles by appending to the head
+  link(rel="stylesheet" href="/stylesheets/trail.css")
+  //- add page specific js
+  script(src='/javascripts/trails.js' type='text/javascript')
+  meta(name="csrf-token", content=`${csrfToken}` )

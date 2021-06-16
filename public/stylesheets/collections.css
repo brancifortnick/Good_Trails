@@ -1,0 +1,170 @@
+body {
+    background-color: #222629;
+}
+
+/* .div {
+    background-color: #5A5A5A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+.collections{
+    color: white;
+    width: 1200px;
+    height: 1000px;
+    margin: auto;
+    background-color: #222629;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    gap: 5px;
+}
+
+.header1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 70px;
+    font-weight: bold;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.li {
+    list-style: none;
+}
+
+.allButton, .visitedButton, .wantToVisit {
+    margin-top: 6px;
+    color: #86C232;
+    background-color: #2B2B2B;
+    background-image: none;
+    border-color: #86C232;
+    display: block;
+    width: 100%;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+    transition: all 0.4s ease 0s;
+}
+
+button:hover {
+    color: #2B2B2B;
+    background-color: #86C232;
+    background-image: none;
+    border-color: #86C232;
+}
+
+button:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+.toggled {
+    color: #2B2B2B;
+    background-color: #86C232;
+}
+
+.toggled:hover {
+    color: #86C232;
+    background-color: #2B2B2B;
+}
+
+.allContainer{
+    padding: 10px;
+    height: fit-content;
+    width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+img.trail-image{
+    object-fit: cover;
+    width: 200px;
+    justify-self: center;
+    border-radius: 3px;
+    border: 3px solid #2B2B2B;
+}
+
+.trail-info{
+    margin-left: 5px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.trail-container{
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #7C7C7C;
+    border: 3px solid #2B2B2B;
+    border-radius: 5px;
+}
+
+.trail-container a{
+    text-decoration: none;
+}
+
+.trail-name{
+    width: 150px;
+    margin-bottom: 5px;
+    background-color: #2B2B2B;
+    font-size: 1.2em;
+    color: #86C232;
+    border: 1px solid #86C232;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.trail-state{
+    margin-bottom: 10px;
+    background-color: #2b2b2b;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+
+/*
+.allButton {
+
+}
+
+.visitedButton {
+
+}
+
+.wantToVisit {
+
+}
+
+.allButton.off ~ div {
+    visibility: hidden;
+    display: none;
+}
+
+.visitedButton.off ~ div {
+    visibility: hidden;
+    display: none;
+}
+
+.wantToVisit.off ~ div {
+    visibility: hidden;
+    display: none;
+} */

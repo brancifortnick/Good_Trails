@@ -1,0 +1,174 @@
+h1 {
+    color: #555555;
+}
+
+body{
+    /* background-image: url("/images/trail0.jpeg"); */
+    background-size:    cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+    overflow: hidden;
+    font-size: 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+@media only screen and (max-width: 1197px) {
+    .links-container {
+        display: none;
+    }
+}
+@media only screen and (max-width: 1085px) {
+    video {
+       display: none;
+    }
+    body {
+        background-color: #222629;
+    }
+}
+
+.recommended{
+    position: absolute;
+    left: 30px;
+    top: 55px;
+    background-color: #2B2B2B;
+    width: 400px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #5A5A5A;
+    text-decoration: none;
+    color:white;
+}
+
+.allContainer{
+    padding: 10px;
+    height: fit-content;
+    width: 1200px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+img.trail-image{
+    object-fit: cover;
+    width: 200px;
+    justify-self: center;
+    border-radius: 3px;
+    border: 3px solid #2B2B2B;
+}
+
+.trail-info{
+    margin-left: 5px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.trail-container1{
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #7C7C7C;
+    border: 3px solid #2B2B2B;
+    border-radius: 5px;
+    position: absolute;
+    left: 30px;
+    top: 160px;
+    width: 400px;
+    text-decoration: none;
+    color:white;
+}
+
+.trail-container2{
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #7C7C7C;
+    border: 3px solid #2B2B2B;
+    border-radius: 5px;
+    position: absolute;
+    left: 30px;
+    top: 345px;
+    width: 400px;
+    text-decoration: none;
+    color:white;
+}
+
+.trail-container3{
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #7C7C7C;
+    border: 3px solid #2B2B2B;
+    border-radius: 5px;
+    position: absolute;
+    left: 30px;
+    top: 530px;
+    width: 400px;
+    text-decoration: none;
+    color:white;
+}
+
+a {
+    text-decoration: none;
+}
+
+.trail-name{
+    width: 150px;
+    margin-bottom: 5px;
+    background-color: #2B2B2B;
+    font-size: 1.2em;
+    color: #86C232;
+    border: 1px solid #86C232;
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.trail-state{
+    margin-bottom: 10px;
+    background-color: #2b2b2b;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+.links-container {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    background-color: #2B2B2B;
+    width: 1200px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #5A5A5A;
+    text-decoration: none;
+    color:white;
+}
+
+.links-container a, h2{
+    color:white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 0.2rem;
+}
+
+.links-container a:hover{
+    transition: all 0.4s ease 0s;
+    color: #86c232;
+}
+
+.state_links {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+h2.trail-state{
+    font-size: 0.9em;
+}
