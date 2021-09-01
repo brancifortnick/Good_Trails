@@ -1,5 +1,5 @@
 
-# [GoodTrails](https://good-trails.herokuapp.com/)
+# [Good Trails](https://good-trails.herokuapp.com/)
 GoodTrails is a goodreads.com clone which focuses on locating popular Trails in each state. Whether you're a novice or expert level hiker, GoodTrails is the place for you to keep track of your past adventures and/or upcoming desires.
 
   * [Features](https://github.com/Run5/GoodTrails/wiki/Features)
