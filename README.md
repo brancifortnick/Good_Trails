@@ -1,6 +1,6 @@
 
 # [Good Trails](https://good-trails.herokuapp.com/)
-GoodTrails is a goodreads.com clone which focuses on locating popular Trails in each state. Whether you're a novice or expert level hiker, GoodTrails is the place for you to keep track of your past adventures and/or upcoming desires.
+GoodTrails is a goodreads.com clone which focuses on locating popular Trails in each state. Whether you're a novice or expert level hiker, GoodTrails is the place for you to keep track of your past adventure(s) and / or upcoming excursion(s).
 
   * [Features](https://github.com/Run5/GoodTrails/wiki/Features)
   * [Schema](https://github.com/Run5/GoodTrails/wiki/Database-Schema)
@@ -19,49 +19,52 @@ GoodTrails is a goodreads.com clone which focuses on locating popular Trails in 
  ### Technologies Used
  * JavaScript
  * Node.js
- * Postgresql (Sequelize ORM)
  * Express.js
- * Heroku
- * Pug
+ * PostgreSQL (Sequelize ORM)
+ * Express.js
+ * Pug.js
+ * HTML
  * CSS
+ * Heroku
+
 
  ### Key Features
-   * the authenticated user can create a collection of trails they are either interested in, or have previously visited.  This is accomplished by selecting state codes which houses the trail data for a variety of trails with ranging difficulties.
-   * ability to write, and read reflecting specific trails
-   * ability to edit and delete these reviews.
+   * the authenticated user can create a collection of trails they are either interested in, or have previously visited.  
+     This is accomplished by selecting state codes which house the trail data for a variety of trails - ranging difficulties.
+   * ability to read trail data such as, descriptions, difficulty and location of each trail / Hike.
+   * ability to create, edit and delete reviews.
 
  ### Brief Code Snippet
   * The code below dynamically create review divs
   ```javascript
-function renderReviews(reviews, reviewDisplayContainer) {
-  // console.log("line 259, reviews array has length?", reviews.length);
-  try {
-    if (reviews.length === 0) {
-      const noReviewText = document.createElement("p")
-      noReviewText.innerHTML = "There are no reviews for this trail yet"
-      reviewDisplayContainer.appendChild(noReviewText);
-    } else {
-      // empty the reviewDisplayContainer
-      reviewDisplayContainer.innerHTML = "";
-      reviews.forEach(review => {
-        const newReviewDiv = document.createElement("div");
-        newReviewDiv.setAttribute("id", `review-${review.id}-div`);
-        newReviewDiv.setAttribute("class", "each-review");
-        // fill in review text and author
-        const newReviewText = document.createElement("p")
-        const newReviewUser = document.createElement("p")
-        newReviewText.innerHTML = review.review
-        newReviewUser.innerHTML = `-Reviewed by ${review.User.username}`
-        newReviewDiv.append(newReviewText, newReviewUser)
-        reviewDisplayContainer.append(newReviewDiv)
-      })
-    }
-  } catch (error) {
-    console.error(error);
-  }
-}
+  function renderReviews(reviews, reviewDisplayContainer) {
+    try {
+      if (reviews.length === 0) {
+        const noReviewText = document.createElement("p")
+        noReviewText.innerHTML = "There are no reviews for this trail yet"
+        reviewDisplayContainer.appendChild(noReviewText);
+      } else {
+        // empty the reviewDisplayContainer
+        reviewDisplayContainer.innerHTML = "";
+        reviews.forEach(review => {
+          const newReviewDiv = document.createElement("div");
+          newReviewDiv.setAttribute("id", `review-${review.id}-div`);
+          newReviewDiv.setAttribute("class", "each-review");
+          // fill in review text and author
+          const newReviewText = document.createElement("p")
+          const newReviewUser = document.createElement("p")
+          newReviewText.innerHTML = review.review
+          newReviewUser.innerHTML = `-Reviewed by ${review.User.username}`
+          newReviewDiv.append(newReviewText, newReviewUser)
+          reviewDisplayContainer.append(newReviewDiv)
+        })
+      }
+    } catch (error) {
+     console.error(error);
+      }
+   };
   ```
-# Developers
+# Developers:
 
  **Chase Brashear**
   * https://github.com/run5
