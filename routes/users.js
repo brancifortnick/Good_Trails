@@ -173,8 +173,12 @@ router.get('/navbar', (req, res) => {
 
 // utility to get current user
 router.get('/current', async (req, res) => {
-  const user = await User.findByPk(req.session.auth.userId)
-  res.json(user)
+  if (req.session.auth && req.session.auth.userId) {
+    const user = await User.findByPk(req.session.auth.userId);
+    res.json(user);
+  } else {
+    res.json(null);
+  }
 })
 
 router.get('/isLoggedIn', (req, res, next) => {
