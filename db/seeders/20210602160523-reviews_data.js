@@ -9,14 +9,14 @@ module.exports = {
           {
             review: "This trail is amazing!",
             user_id: 1,
-            trail_id: 4,
+            trail_id: 39,
             createdAt: new Date(),
             updatedAt: new Date(),
           },
           {
             review: "This trail was difficult!",
             user_id: 1,
-            trail_id: 7,
+            trail_id: 42,
             createdAt: new Date(),
             updatedAt: new Date(),
           },

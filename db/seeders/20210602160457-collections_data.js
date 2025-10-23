@@ -6,7 +6,7 @@ module.exports = {
 
       return queryInterface.bulkInsert('Collections', [{
         user_id: 1,
-        trail_id: 4,
+        trail_id: 39,
         visited: true,
         want_to_visit: false,
         createdAt: new Date(),
