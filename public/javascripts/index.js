@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     for (var i = 0; i < 3; i++) {
         do {
             var random = getRandomInt(1, 8);
-        } while( trailsArray.includes(random) );// will return false if random isn't asigned
+        } while (trailsArray.includes(random));// will return false if random isn't asigned
         trailsArray.push(random);
     };//endFor
     let containerNumber = 1;
@@ -49,6 +49,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         trailInfo.appendChild(trailDifficulty);
         trailContainer.appendChild(trailInfo);
         allContainer.appendChild(trailContainer);
-        containerNumber+=1;
+        containerNumber += 1;
     });
 });//endDOMContentLoadedEventListener
