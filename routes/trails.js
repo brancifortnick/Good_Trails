@@ -12,7 +12,7 @@ const { requireAuth, restoreUser } = require("../auth");
 
 
 // GET /trails/:id
-router.get("/:id(\\d+)", asyncHandler(async (req, res, next) => {
+router.get("/:id(\\d+)", restoreUser, asyncHandler(async (req, res, next) => {
   const trailId = parseInt(req.params.id, 10);
   const trail = await Trail.findByPk(trailId, {
     include:
@@ -20,7 +20,19 @@ router.get("/:id(\\d+)", asyncHandler(async (req, res, next) => {
         { model: Review, include: { model: User } }
       ]
   });
-  const loggedInUser = await User.findByPk(req.session.auth.user.id);
+  
+  if (!trail) {
+    const err = new Error('Trail not found');
+    err.status = 404;
+    return next(err);
+  }
+
+  // Get logged in user if authenticated, otherwise set to null
+  let loggedInUser = null;
+  if (req.session.auth && req.session.auth.userId) {
+    loggedInUser = await User.findByPk(req.session.auth.userId);
+  }
+  
   const state = await State.findByPk(trail.state_id);
 
   req.session.save(() => {
@@ -28,7 +40,7 @@ router.get("/:id(\\d+)", asyncHandler(async (req, res, next) => {
       trail,
       state,
       title: "Trail",
-      loggedInUser: loggedInUser.toJSON() //currently not using this
+      loggedInUser: loggedInUser ? loggedInUser.toJSON() : null //currently not using this
     })
   });//end render
 }));//end GET route for a single trail
