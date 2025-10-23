@@ -5,7 +5,9 @@ block content
   div.grid-container
     div.trail-banner
       div.trail-img
-        img(src=`/images/trail/${trail.id}.jpg`).trail-image
+        - var imageIndex = ((trail.id - 1) % 8)
+        - var imagePath = imageIndex === 0 ? '/images/trail0.jpeg' : `/images/trail${imageIndex}.jpg`
+        img(src=imagePath, onerror="this.src='/images/trail1.jpg'").trail-image
       div.trail-toggles
         button.visited Visited
         button.interested Interested
