@@ -1,4 +1,4 @@
-### Click the hyperlink below to visit the webpage
+### Site no longer live
 # [Good Trails](https://goodtrails-c4d9e6ac08f9.herokuapp.com/)
 GoodTrails is a goodreads.com clone which focuses on locating popular Trails in each state. Whether you're a novice or expert level hiker, GoodTrails is the place for you to keep track of your past adventure(s) and / or upcoming excursion(s).
 
